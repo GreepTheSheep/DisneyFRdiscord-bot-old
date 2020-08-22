@@ -195,11 +195,11 @@ bot.on("message",message => {
 
 if(message.content.toLowerCase().startsWith(prefix + "cry")){
         if(cool.has(message.author.id)) return erreur("Vous devez attendre 5 secondes entre chaque commande !",message.channel.id)
-        let alea = random(0,grimace.length - 1)
+        let alea = random(0,cry.length - 1)
         let mention = message.mentions.users.first() || bot.user
         let embed = new Discord.RichEmbed()
         .setColor("2E2EFE")
-        .setDescription(":stuck_out_tongue_closed_eyes:  **" + message.author.username + "** pleure à cause de **" + mention.username + "** !")
+        .setDescription(":sob:  **" + message.author.username + "** pleure à cause de **" + mention.username + "** !")
         .setImage(cry[alea])
         message.channel.send(embed)
         cool.add(message.author.id)
