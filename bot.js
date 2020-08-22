@@ -35,7 +35,8 @@ let smile = ["https://cdn.discordapp.com/attachments/610966366077583360/61132172
 let hey = ["https://cdn.discordapp.com/attachments/610967355450982450/611515021742309376/tenor_39.gif","https://cdn.discordapp.com/attachments/610967355450982450/611515057054154752/tenor_40.gif","https://cdn.discordapp.com/attachments/610967355450982450/611515107779936256/tenor_41.gif","https://cdn.discordapp.com/attachments/610967355450982450/611515173941018624/tenor_42.gif","https://cdn.discordapp.com/attachments/610967355450982450/611515201174372352/tenor_43.gif","https://cdn.discordapp.com/attachments/610967355450982450/611515217419042833/tenor_44.gif","https://cdn.discordapp.com/attachments/610967355450982450/660082379205115914/tenor_46.gif","https://cdn.discordapp.com/attachments/610967355450982450/660082429079584779/3cef15821cf8c4d483d8b821a5452bf5.gif","https://cdn.discordapp.com/attachments/610967355450982450/660082510566391819/tenor_47.gif","https://cdn.discordapp.com/attachments/610967355450982450/660082639331393556/giphy_17.gif","https://cdn.discordapp.com/attachments/610967355450982450/660083971727556631/giphy_24.gif","https://cdn.discordapp.com/attachments/610967355450982450/660084717957283850/tenor_49.gif"]
 let smug = ["https://cdn.discordapp.com/attachments/611124968700379146/611340491270914048/8a70e88f0068b23da1e6ea1201ecd0b8.gif","https://cdn.discordapp.com/attachments/611124968700379146/611514558158471178/tenor_37.gif","https://cdn.discordapp.com/attachments/611124968700379146/611514598280921123/tenor_38.gif","https://cdn.discordapp.com/attachments/611124968700379146/660082777924042772/20T3_1.gif","https://cdn.discordapp.com/attachments/611124968700379146/660082849835122688/tumblr_0aa32804f5d4ff2793852dacaa0d1446_d509c416_500.gif"]
 let grimace = ["https://cdn.discordapp.com/attachments/611125086216388610/611340582446694412/T8lj.gif","https://cdn.discordapp.com/attachments/611125086216388610/611340687853486091/giphy-9.gif","https://cdn.discordapp.com/attachments/611125086216388610/611340764118777897/shock-gif.gif","https://cdn.discordapp.com/attachments/611125086216388610/611340803779985408/bff79429.gif","https://cdn.discordapp.com/attachments/611125086216388610/611351442049073172/tenor_36.gif","https://cdn.discordapp.com/attachments/611125086216388610/660082927526477824/photofunky.gif","https://cdn.discordapp.com/attachments/611125086216388610/660082928079863808/tumblr_m6ll3wgdxC1r8tvezo1_500.gif"]
-
+let cry = ["https://cdn.discordapp.com/attachments/615902124093472780/660083260612804648/giphy_19.gif","https://cdn.discordapp.com/attachments/615902124093472780/660083438149304321/giphy_21.gif","https://cdn.discordapp.com/attachments/615902124093472780/660083953570414622/tenor_48.gif"]
+           
 
 function random(min, max){
     return Math.round(Math.random() * (max - min) + min)
@@ -66,7 +67,8 @@ bot.on("message",message => {
         "\n• `smile` - Faire un grand sourir" +
         "\n• `hey` - Faire coucou" +
         "\n• `smug` - Bouder" +
-        "\n• `grimace` - Faire une grimace")
+        "\n• `grimace` - Faire une grimace" +
+        "\n• `cry` - Pleurer)
         message.channel.send(embed)
     }
 
@@ -184,6 +186,21 @@ bot.on("message",message => {
         .setColor("2E2EFE")
         .setDescription(":stuck_out_tongue_closed_eyes:  **" + message.author.username + "** fait sa plus belle grimace pour **" + mention.username + "** !")
         .setImage(grimace[alea])
+        message.channel.send(embed)
+        cool.add(message.author.id)
+        setTimeout(() => {
+            cool.delete(message.author.id)
+        }, 5000);
+    }
+
+if(message.content.toLowerCase().startsWith(prefix + "cry")){
+        if(cool.has(message.author.id)) return erreur("Vous devez attendre 5 secondes entre chaque commande !",message.channel.id)
+        let alea = random(0,grimace.length - 1)
+        let mention = message.mentions.users.first() || bot.user
+        let embed = new Discord.RichEmbed()
+        .setColor("2E2EFE")
+        .setDescription(":stuck_out_tongue_closed_eyes:  **" + message.author.username + "** pleure à cause de **" + mention.username + "** !")
+        .setImage(cry[alea])
         message.channel.send(embed)
         cool.add(message.author.id)
         setTimeout(() => {
