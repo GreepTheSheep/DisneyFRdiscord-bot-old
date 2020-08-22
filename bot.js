@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const bot = new Discord.Client()
 let prefix = "/"
 let cool = new Set()
-let staff = ["302092279114629121","474585568613892107","299560596976697344"]
+let staff = ["302092279114629121","330030648456642562"]
 
 bot.on("ready" , () => {
 bot.user.setPresence({
