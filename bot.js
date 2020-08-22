@@ -191,16 +191,6 @@ bot.on("message",message => {
         }, 5000);
     }
 
-    if(message.content.toLowerCase().startsWith(prefix + "lick")){
-        if(!staff.includes(message.author.id)) return message.react("❌")
-        let mention = message.mentions.users.first() || bot.user
-        let embed = new Discord.RichEmbed()
-        .setColor("2E2EFE")
-        .setDescription(":tongue: **" + message.author.username + "** lèche **" + mention.username + "** !")
-        .setImage("https://cdn.discordapp.com/attachments/612673542387007558/612673575316619275/giphy_10.gif")
-        message.channel.send(embed)
-    }
-
   
   if(message.content === "change"){
     if(!staff.includes(message.author.id)) return message.react("❌")
