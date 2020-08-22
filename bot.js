@@ -68,7 +68,7 @@ bot.on("message",message => {
         "\n• `hey` - Faire coucou" +
         "\n• `smug` - Bouder" +
         "\n• `grimace` - Faire une grimace" +
-        "\n• `cry` - Pleurer)
+        "\n• `cry` - Pleurer")
         message.channel.send(embed)
     }
 
