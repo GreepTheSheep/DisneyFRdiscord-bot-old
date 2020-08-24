@@ -3,7 +3,7 @@ const fs = require('fs')
 
 function hug(message, client, prefix, cool, f){
     if(message.content.toLowerCase().startsWith(prefix + "hug")){
-        const hugList = JSON.parse(fs.readFileSync('./data/gifs/hugg.json'))
+        const hugList = JSON.parse(fs.readFileSync('./data/gifs/hug.json'))
         if(cool.has(message.author.id)) return f.erreur("Vous devez attendre 5 secondes entre chaque commande !",message.channel.id)
         let alea = f.random(0,hugList.length - 1)
         let mention = message.mentions.users.first() || client.user

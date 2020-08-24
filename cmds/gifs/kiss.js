@@ -3,7 +3,7 @@ const fs = require('fs')
 
 function kiss(message, client, prefix, cool, f){
     if(message.content.toLowerCase().startsWith(prefix + "kiss")){
-        const kissList = JSON.parse(fs.readFileSync('./data/gifs/kiss.js'))
+        const kissList = JSON.parse(fs.readFileSync('./data/gifs/kiss.json'))
         if(cool.has(message.author.id)) return f.erreur("Vous devez attendre 5 secondes entre chaque commande !",message.channel.id)
         let alea = f.random(0,kissList.length - 1)
         let mention = message.mentions.users.first() || client.user
