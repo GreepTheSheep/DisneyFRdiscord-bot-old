@@ -13,6 +13,8 @@ client.on("ready" , () => {
 })
 
 client.on("message",message => {
+    if (message.author.bot) return
+
     if(message.channel.type === "dm") return message.reply("Le modmail arrivera bientôt, vous verrez ça va péter du feu 🔥")
   
     if (!message.content.startsWith(prefix)) return
