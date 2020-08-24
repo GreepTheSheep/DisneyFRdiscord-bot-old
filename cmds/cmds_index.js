@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-function cmds_index(client, message, prefix, cool, config, f){
+function cmds_index(message, client, prefix, cool, config, f){
 
     const help = require('./help.js')
     help(message, client, prefix)
