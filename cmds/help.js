@@ -9,7 +9,7 @@ function help(message, client, prefix){
         embed.setColor("2E2EFE")
         .setAuthor("Aide pour " + message.author.username + " :",client.user.displayAvatarURL)
         .setDescription(fs.readFileSync('./cmds/readme.md', 'utf-8'))
-        .setFooter(`Tu est beau, tu le sais ?`)
+        .setFooter(`Tu es beau, tu le sais ?`)
         message.channel.send(embed)
     }
 }
