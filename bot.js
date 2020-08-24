@@ -8,7 +8,7 @@ let cool = new Set()
 let staff = config.staff
 
 client.on("ready" , () => {
-    client.user.setActivity('/aled') 
+    client.user.setActivity('/aide') 
     console.log(`${client.user.tag} est prêt sur ${client.guilds.size} serveurs ! \n-------------------------------------------`)
 })
 
