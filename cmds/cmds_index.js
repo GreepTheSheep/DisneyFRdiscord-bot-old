@@ -3,6 +3,9 @@ const Discord = require('discord.js')
 function cmds_index(message, client, prefix, cool, config, f){
 
     // -- Gifs
+    const angry = require('./gifs/angry.js')
+    angry(message, client, prefix, cool, f)
+    
     const cry = require('./gifs/cry.js')
     cry(message, client, prefix, cool, f)
 
