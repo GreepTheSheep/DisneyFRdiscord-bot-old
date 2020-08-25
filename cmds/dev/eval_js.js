@@ -22,16 +22,16 @@ const { Attachment } = require('discord.js');
             }
             if (clean(evaled).length > 1024 && clean(evaled).length < 1950) return message.reply(`Output:\n\`\`\`${clean(evaled)}\`\`\``);
             
-            if (clean(evaled).length > 1950) return fs.writeFile('./logs/eval.log', `Command: ${args.join(' ')}\nExit code: ${code}\n\n\nOutput:\n\n${clean(evaled)}`, 'utf8', (err) => {
+            if (clean(evaled).length > 1950) return fs.writeFile('./data/eval.log', `Command: ${args.join(' ')}\nExit code: ${code}\n\n\nOutput:\n\n${clean(evaled)}`, 'utf8', (err) => {
                 if (err) return function(){
                     console.log(err);
                     message.reply(`FS error: ${err}`)
                 }
-                const attachment = new Attachment('./logs/eval.log')
-                message.reply('Output is more than 2000 characters, see attachment', attachment)
+                const attachment = new Attachment('./data/eval.log')
+                message.reply('Voici le résultat:', attachment)
             })
             
-            message.reply(`EVAL:\n\`\`\`javascript\n${code}\`\`\`\nNode Result: \`${clean(evaled)}\``);
+            message.reply(`EVAL:\n\`\`\`javascript\n${code}\`\`\`\n Resultat: \`${clean(evaled)}\``);
         } catch (err) {
             const args = message.content.split(" ").slice(1);
             const code = args.join(" ");
