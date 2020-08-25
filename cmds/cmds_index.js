@@ -13,9 +13,6 @@ function cmds_index(message, client, prefix, cool, config, f){
     const dance = require('./gifs/dance.js')
     dance(message, client, prefix, cool, f)
 
-    const grimace = require('./gifs/grimace.js')
-    grimace(message, client, prefix, cool, f)
-
     const hey = require('./gifs/hey.js')
     hey(message, client, prefix, cool, f)
 
