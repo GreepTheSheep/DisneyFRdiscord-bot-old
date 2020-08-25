@@ -7,7 +7,7 @@ const fs = require('fs')
 async function patchnote(message, client, prefix, config, f){
     if(message.content.startsWith(prefix + "patchnote")){
         let embed = new Discord.RichEmbed()
-        embed.setColor("2E2EFE")
+        embed.setColor('RANDOM')
         .setAuthor(`Notes de mise à jour de ${client.user.username}:`,client.user.displayAvatarURL)
         .setDescription(fs.readFileSync('./data/textes/Patch-Notes.md', 'utf-8'))
         .setFooter("Version actuelle: " + JSON.parse(fs.readFileSync('./package.json', 'utf-8')).version)
