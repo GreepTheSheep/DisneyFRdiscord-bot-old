@@ -1,3 +1,3 @@
 - Ajout de `/patchnote`
 - Suppression de `/grimace`
-- Beaucoup de GIFs ajoutés (Merci <@302092279114629121> !)
+- Beaucoup de GIFs ajoutés (130 au total) (Merci <@302092279114629121> !)
