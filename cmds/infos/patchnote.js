@@ -4,7 +4,7 @@
 const Discord = require('discord.js')
 const fs = require('fs')
 
-async function patchnote(message, client, prefix, config, f){
+function patchnote(message, client, prefix, config, f){
     if(message.content.startsWith(prefix + "patchnote")){
         let embed = new Discord.RichEmbed()
         embed.setColor('RANDOM')
@@ -18,9 +18,7 @@ async function patchnote(message, client, prefix, config, f){
           var startText
           if (args[0] == 'ping') startText = 'Salut les <@&660632597411397641> ! On m\'a fait une *grande* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>'
           else startText =  'Salut les geeks ! On m\'a fait une *petite* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>'
-          const m = await message.channel.send(startText, embed)
-          m.react('600993200932651021')
-          m.react('602243599177875457')
+          message.channel.send(startText, embed)
         } else message.channel.send(embed)
     }
 }
