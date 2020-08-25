@@ -16,8 +16,8 @@ function patchnote(message, client, prefix, config, f){
           args.shift();
           message.delete()
           var startText
-          if (args[0] == 'ping') startText = 'Salut les <@&660632597411397641> ! On m\'a fait une *grande* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>'
-          else startText =  'Salut les geeks ! On m\'a fait une *petite* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>'
+          if (args[0] == 'ping') startText = 'Salut ! On m\'a fait une *grande* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>\n<@&660632597411397641>'
+          else startText =  'Salut ! On m\'a fait une *petite* mise à jour! Amusez-vous bien <:Pascal:619625184323960842>'
           message.channel.send(startText, embed)
         } else message.channel.send(embed)
     }
