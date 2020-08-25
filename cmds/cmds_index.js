@@ -34,6 +34,9 @@ function cmds_index(message, client, prefix, cool, config, f){
     const patchnote = require('./infos/patchnote.js')
     patchnote(message, client, prefix, config, f)
 
+    const about = require('./infos/about.js')
+    about(message, client, prefix, config, f)
+
     // -- Staff
     if(config.staff.includes(message.author.id)) {
         const change = require('./staff/change.js')
