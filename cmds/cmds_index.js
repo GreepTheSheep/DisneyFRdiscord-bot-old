@@ -32,8 +32,11 @@ function cmds_index(message, client, prefix, cool, config, f){
     smug(message, client, prefix, cool, f)
 
     // -- Staff
-    const change = require('./staff/change.js')
-    change(message, client, prefix, cool, config)
+    if(config.staff.includes(message.author.id)) {
+        const change = require('./staff/change.js')
+        change(message, client, prefix, cool, config)
+    }
+    
 }
 
 module.exports = cmds_index
