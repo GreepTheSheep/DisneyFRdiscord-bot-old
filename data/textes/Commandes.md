@@ -7,6 +7,7 @@
 • `/hey` - Faire coucou
 • `/smug` - Bouder
 • `/cry` - Pleurer
+• `/angry` - S'énerver
 
 **__ℹ Infos :__**
 • `/patchnote` - Notes de mise à jour
