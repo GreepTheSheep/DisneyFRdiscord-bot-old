@@ -43,7 +43,10 @@ function cmds_index(message, client, prefix, cool, config, f){
     // -- DEV
     if (message.author.id == '330030648456642562'){
         const eval_cmd = require('./dev/eval_js.js')
-        eval_cmd(message, client, prefix, config, f) 
+        eval_cmd(message, client, prefix, config, f)
+
+        const update = require('./dev/update.js')
+        update(message, client, prefix, config, f)
     }
     
 }
