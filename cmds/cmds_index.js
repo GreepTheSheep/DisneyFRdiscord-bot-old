@@ -2,10 +2,6 @@ const Discord = require('discord.js')
 
 function cmds_index(message, client, prefix, cool, config, f){
 
-    const help = require('./help.js')
-    help(message, client, prefix)
-
-
     // -- Gifs
     const cry = require('./gifs/cry.js')
     cry(message, client, prefix, cool, f)
@@ -32,6 +28,9 @@ function cmds_index(message, client, prefix, cool, config, f){
     smug(message, client, prefix, cool, f)
 
     // -- Infos
+    const help = require('./infos/help.js')
+    help(message, client, prefix)
+    
     const patchnote = require('./infos/patchnote.js')
     patchnote(message, client, prefix, config, f)
 
