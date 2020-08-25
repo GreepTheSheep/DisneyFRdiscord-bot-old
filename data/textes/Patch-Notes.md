@@ -1,3 +1,2 @@
-- Ajout de `/patchnote`
-- Suppression de `/grimace`
-- Beaucoup de GIFs ajoutés (130 au total) (Merci <@302092279114629121> !)
+- Ajout de `/angry`
+- Ajout de commandes staff (ohhhh...)
