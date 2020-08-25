@@ -6,5 +6,4 @@
 • `/smile` - Faire un grand sourir
 • `/hey` - Faire coucou
 • `/smug` - Bouder
-• `/grimace` - Faire une grimace
 • `/cry` - Pleurer
