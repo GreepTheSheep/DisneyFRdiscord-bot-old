@@ -31,6 +31,10 @@ function cmds_index(message, client, prefix, cool, config, f){
     const smug = require('./gifs/smug.js')
     smug(message, client, prefix, cool, f)
 
+    // -- Infos
+    const patchnote = require('./infos/patchnote.js')
+    patchnote(message, client, prefix, config, f)
+
     // -- Staff
     if(config.staff.includes(message.author.id)) {
         const change = require('./staff/change.js')
