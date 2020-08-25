@@ -1,1 +1,3 @@
-blablabla
+- Ajout de `/patchnote`
+- Suppression de `/grimace`
+- Beaucoup de GIFs ajoutés (Merci <@302092279114629121> !)
