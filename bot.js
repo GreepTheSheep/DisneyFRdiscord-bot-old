@@ -26,13 +26,17 @@ client.on("message",message => {
 })
 
 client.on("guildMemberAdd",member => {
-  if(member.client === true) return
-  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + (member.guild.memberCount - member.guild.members.filter(e => e.user.client).size))
+  const total = member.guild.members.array().length;
+      const bots = member.guild.members.filter(m => m.user.bot).size; 
+      const members = total - bots
+  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
 })
 
 client.on("guildMemberRemove",member => {
-  if(member.client === true) return
-  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + (member.guild.memberCount - member.guild.members.filter(e => e.user.client).size))
+  const total = member.guild.members.array().length;
+      const bots = member.guild.members.filter(m => m.user.bot).size; 
+      const members = total - bots
+  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
 })
 
 client.login(config.token)
