@@ -1,2 +1,3 @@
-- Ajout de `/angry`
+- Ajout de `/angry` (20 gif au total)
+- Ajout de la commande `/about` et de son alias `/bot`
 - Ajout de commandes staff (ohhhh...)
