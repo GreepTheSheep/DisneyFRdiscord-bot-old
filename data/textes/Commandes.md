@@ -11,3 +11,4 @@
 
 **__ℹ Infos :__**
 • `/patchnote` - Notes de mise à jour
+• `/bot` - Tout ce qu'il y a à savoir sur le bot
