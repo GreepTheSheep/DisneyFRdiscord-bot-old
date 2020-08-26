@@ -9,7 +9,7 @@ function angry(message, client, prefix, cool, f){
         let mention = message.mentions.users.first() || client.user
         let embed = new Discord.RichEmbed()
         .setColor("2E2EFE")
-        .setDescription(":rage:  **" + message.author.username + "** est énervé à cause de **" + mention.username + "** !")
+        .setDescription(":angry:  **" + message.author.username + "** est énervé contre **" + mention.username + "** !")
         .setImage(angryList[alea])
         message.channel.send(embed)
         cool.add(message.author.id)
