@@ -8,7 +8,7 @@ function direct(message, client,prefix, config, f){
             newTicket(message, client, prefix, config, f)
         }
         else {
-            const helpDM = require('help-dm.js')
+            const helpDM = require('./help-dm.js')
             helpDM(message, client, prefix, config, f)
         }
 
