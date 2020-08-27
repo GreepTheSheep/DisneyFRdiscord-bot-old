@@ -10,7 +10,7 @@ function update(message, client, prefix, config, f) {
                 message.reply(`Output:\n\`\`\`${stdout}${stderr}\`\`\``).then(m=>message.channel.stopTyping(true));
             });
         } catch (err) {
-            message.reply(`EVAL **__ERROR__**\n\`\`\`xl\n'pm2 stop GL && git pull && npm update && pm2 start GL'\`\`\``);
+            f.erreur(`Y'as eu une erreur lors de la maj...`, message.channel.id);
             message.channel.stopTyping(true)
         }
     }
