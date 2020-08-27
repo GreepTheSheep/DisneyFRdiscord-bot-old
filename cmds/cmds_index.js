@@ -42,8 +42,11 @@ function cmds_index(message, client, prefix, cool, config, f){
 
     // -- Staff
     if(config.staff.includes(message.author.id)) {
+        
+        /*
         const change = require('./staff/change.js')
         change(message, client, prefix, cool, config)
+        */
 
         //-- Modmail
         const closeTicket = require('../dm/modmail/close.js')

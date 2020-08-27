@@ -30,6 +30,7 @@ client.on("message",message => {
     
 })
 
+/*
 client.on("guildMemberAdd",member => {
   const total = member.guild.members.array().length;
       const bots = member.guild.members.filter(m => m.user.bot).size; 
@@ -43,5 +44,6 @@ client.on("guildMemberRemove",member => {
       const members = total - bots
   client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
 })
+*/
 
 client.login(config.token)
