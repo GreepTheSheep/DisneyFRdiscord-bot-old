@@ -15,13 +15,18 @@ client.on("ready" , () => {
 client.on("message",message => {
     if (message.author.bot) return
 
-    if(message.channel.type === "dm") return message.reply("Le modmail arrivera bientôt, vous verrez ça va péter du feu 🔥")
-  
-    if (!message.content.startsWith(prefix)) return
- 
+    if(message.channel.type === "dm") {
+      const direct = require('./dm/dm-index.js')
+      direct(message, client,prefix, config, f)
+    } else {
+      
+      if (!message.content.startsWith(prefix)) return
 
-    const cmds_index = require('./cmds/cmds_index.js')
-    cmds_index(message, client, prefix, cool, config, f)
+      const cmds_index = require('./cmds/cmds_index.js')
+      cmds_index(message, client, prefix, cool, config, f)
+    }
+  
+    
     
 })
 
