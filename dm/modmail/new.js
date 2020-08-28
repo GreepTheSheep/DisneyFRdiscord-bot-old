@@ -24,13 +24,14 @@ async function newTicket(message, client,prefix, config, f){
 
     emojis.forEach(async e=>{
         await menu.react(e)
-    }).then(m=>menu.edit(embed2))
+    })
+    await menu.edit(embed2)
 
     const filter = (reaction, user) => {
 	    return emojis.includes(reaction.emoji.name) && user.id === message.author.id;
     };
 
-    menu.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+    menu.awaitReactions(filter, { max: 1, time: 120000, errors: ['time'] })
 	.then(collected => {
         const reaction = collected.first();
         
