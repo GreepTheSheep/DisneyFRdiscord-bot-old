@@ -10,12 +10,12 @@ async function newTicket(message, client,prefix, config, f){
     const menu = await message.author.send('Actuellement en phase de test', embed)
 
     const emojis = [
-        ':one:', // Signalement
-        ':two:', // Question
-        ':three:', // Candidature
-        ':four:', // Partenairait
-        ':five:', // Autre
-        ':cross:' // Annuler
+        '1️⃣', // Signalement
+        '2️⃣', // Question
+        '3️⃣', // Candidature
+        '4️⃣', // Partenairait
+        '5️⃣', // Autre
+        '🔴' // Annuler
     ]
 
     emojis.forEach(async e=>{
@@ -35,7 +35,7 @@ async function newTicket(message, client,prefix, config, f){
 	.then(collected => {
         const reaction = collected.first();
         
-        if (reaction.emoji.name === ':cross:'){
+        if (reaction.emoji.name == emojis[5]){
             menu.edit('Annulé').then(m=>menu.delete(5000).then(m=>message.delete()))
         } else {
             embed.setColor('#A91CE4')
