@@ -18,7 +18,7 @@ async function newTicket(message, client,prefix, config, f){
         ':cross:' // Annuler
     ]
 
-    emojis.forEach(e=>{
+    emojis.forEach(async e=>{
         await menu.react(e)
     })
 
