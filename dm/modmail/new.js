@@ -13,13 +13,13 @@ async function newTicket(message, client,prefix, config, f){
         '1️⃣', // Signalement
         '2️⃣', // Question
         '3️⃣', // Candidature
-        '4️⃣', // Partenairait
+        '4️⃣', // Partenariat
         '5️⃣', // Autre
     ]
 
     embed2.setColor('#1CE488')
         .setTitle('Bienvenue dans le modmail!')
-        .setDescription('**Sélectionnez une raison de conctater le staff:**\n\n:one: - Signaler quelqu\'un\n:two: - Poser une question\n:three: - Poser une candidature\n:four: - Demande de partenairiat\n:five: - Autre demande\n\n:x: - Annuler et fermer')
+        .setDescription('**Sélectionnez une raison de conctater le staff:**\n\n:one: - Signaler quelqu\'un\n:two: - Poser une question\n:three: - Poser une candidature\n:four: - Demande de partenariat\n:five: - Autre demande\n\n:x: - Annuler et fermer')
 
     emojis.forEach(async e=>{
         await menu.react(e)
