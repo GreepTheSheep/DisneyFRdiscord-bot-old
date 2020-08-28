@@ -64,7 +64,8 @@ async function newTicket(message, client,prefix, config, f){
         }		
 	})
 	.catch(collected => {
-		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+        message.author.send('Hmm... J\'ai une erreur')
+		console.log(collected)
 	});
 }
 
