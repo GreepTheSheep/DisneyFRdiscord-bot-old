@@ -51,6 +51,8 @@ function cmds_index(message, client, prefix, cool, config, f){
         change(message, client, prefix, config)
         */
 
+       const staffMenu = require('./staff/staff-menu.js')
+       staffMenu(message, client, prefix, config, f)
     }
 
     // -- DEV
