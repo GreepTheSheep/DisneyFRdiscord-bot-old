@@ -26,6 +26,7 @@ async function newTicket(message, client,prefix, config, f){
     })
     await menu.react('❌').then(m=>menu.edit(embed2))
 
+    emojis.push('❌')
     const filter = (reaction, user) => {
 	    return emojis.includes(reaction.emoji.name) && user.id === message.author.id;
     };
