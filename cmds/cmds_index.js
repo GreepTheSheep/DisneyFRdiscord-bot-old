@@ -48,15 +48,9 @@ function cmds_index(message, client, prefix, cool, config, f){
         
         /*
         const change = require('./staff/change.js')
-        change(message, client, prefix, cool, config)
+        change(message, client, prefix, config)
         */
 
-        //-- Modmail
-        const closeTicket = require('../dm/modmail/close.js')
-        closeTicket(message, client, prefix, config, f)
-
-        const viewTicket = require('../dm/modmail/view.js')
-        viewTicket(message, client, prefix, config, f)
     }
 
     // -- DEV
