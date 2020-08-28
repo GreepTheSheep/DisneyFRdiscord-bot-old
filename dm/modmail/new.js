@@ -36,7 +36,10 @@ async function newTicket(message, client,prefix, config, f){
         const reaction = collected.first();
         
         if (reaction.emoji.name == '❌'){
-            menu.edit('Annulé').then(m=>menu.delete(5000).then(m=>message.delete()))
+            embed2.setColor('#FF0000')
+            .setTitle('Annulé')
+            .setDescription('Bye! 👋')
+            menu.edit(embed2).then(m=>menu.delete(5000))
         } else {
             embed.setColor('#A91CE4')
             .setTitle('Ouverture du ticket...')
