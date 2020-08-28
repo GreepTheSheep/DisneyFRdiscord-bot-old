@@ -15,21 +15,20 @@ async function newTicket(message, client,prefix, config, f){
         '3️⃣', // Candidature
         '4️⃣', // Partenairait
         '5️⃣', // Autre
-        '🔴' // Annuler
+        '❌' // Annuler
     ]
 
     emojis.forEach(async e=>{
         await menu.react(e)
+        embed2.setColor('#1CE488')
+        .setTitle('Bienvenue dans le modmail!')
+        .setDescription('**Sélectionnez une raison de conctater le staff:**\n\n:one: - Signaler quelqu\'un\n:two: - Poser une question\n:three: - Poser une candidature\n:four: - Demande de partenairiat\n:five: - Autre demande\n\n:x: - Annuler et fermer')
+        menu.edit(embed2)
     })
 
     const filter = (reaction, user) => {
 	    return emojis.includes(reaction.emoji.name) && user.id === message.author.id;
     };
-
-    embed2.setColor('#1CE488')
-    .setTitle('Bienvenue dans le modmail!')
-    .setDescription('**Sélectionnez une raison de conctater le staff:**\n\n:one: - Signaler quelqu\'un\n:two: - Poser une question\n:three: - Poser une candidature\n:four: - Demande de partenairiat\n:five: - Autre demande\n\n:cross: - Annuler et fermer')
-    menu.edit(embed2)
 
     menu.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
