@@ -15,7 +15,6 @@ async function newTicket(message, client,prefix, config, f){
         '3️⃣', // Candidature
         '4️⃣', // Partenairait
         '5️⃣', // Autre
-        '❌' // Annuler
     ]
 
     embed2.setColor('#1CE488')
@@ -25,7 +24,7 @@ async function newTicket(message, client,prefix, config, f){
     emojis.forEach(async e=>{
         await menu.react(e)
     })
-    await menu.edit(embed2)
+    await menu.react('❌').then(m=>menu.edit(embed2))
 
     const filter = (reaction, user) => {
 	    return emojis.includes(reaction.emoji.name) && user.id === message.author.id;
@@ -35,7 +34,7 @@ async function newTicket(message, client,prefix, config, f){
 	.then(collected => {
         const reaction = collected.first();
         
-        if (reaction.emoji.name == emojis[5]){
+        if (reaction.emoji.name == '❌'){
             menu.edit('Annulé').then(m=>menu.delete(5000).then(m=>message.delete()))
         } else {
             embed.setColor('#A91CE4')
