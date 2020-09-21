@@ -1,4 +1,4 @@
-const Disord = require('discord.js')
+const Discord = require('discord.js')
 const fs = require('fs')
 const { Attachment } = require('discord.js');
 
