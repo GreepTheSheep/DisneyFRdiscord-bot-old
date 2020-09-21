@@ -41,25 +41,26 @@ async function newTicket(message, client,prefix, config, f){
             .setDescription('Bye! 👋')
             menu.edit(embed2).then(m=>menu.delete(5000))
         } else {
+            const server = client.guilds.get('600355162279641108')
             embed.setColor('#A91CE4')
             .setTitle('Ouverture du ticket...')
             menu.edit(embed)
 
             if (reaction.emoji.name == emojis[0]) {
                 const modmailReport = require('./options/1-report.js')
-                modmailReport(message, client, prefix, config, f, reaction, menu)
+                modmailReport(message, client, prefix, config, f, reaction, menu, server)
             } else if (reaction.emoji.name == emojis[1]) {
                 const modmailAsk = require('./options/2-ask.js')
-                modmailAsk(message, client, prefix, config, f, reaction, menu)
+                modmailAsk(message, client, prefix, config, f, reaction, menu, server)
             } else if (reaction.emoji.name == emojis[2]) {
                 const modmailCandidate = require('./options/3-candidate.js')
-                modmailCandidate(message, client, prefix, config, f, reaction, menu)
+                modmailCandidate(message, client, prefix, config, f, reaction, menu, server)
             } else if (reaction.emoji.name == emojis[3]) {
                 const modmailPartner = require('./options/4-partner.js')
-                modmailPartner(message, client, prefix, config, f, reaction, menu)
+                modmailPartner(message, client, prefix, config, f, reaction, menu, server)
             } else if (reaction.emoji.name == emojis[4]) {
                 const modmailOther = require('./options/5-other.js')
-                modmailOther(message, client, prefix, config, f, reaction, menu)
+                modmailOther(message, client, prefix, config, f, reaction, menu, server)
             }
         }		
 	})
