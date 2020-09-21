@@ -1,13 +1,7 @@
 const Discord = require('discord.js')
 const fs = require('fs')
 const { Attachment } = require('discord.js');
-
-function mapToObj(map){
-    const obj = {}
-    for (let [k,v] of map)
-      obj[k] = v
-    return obj
-}
+const wait = require('util').promisify(setTimeout);
 
 async function modmail_close(message, client, prefix, config, f){
     try{
@@ -30,17 +24,8 @@ async function modmail_close(message, client, prefix, config, f){
                     
                     if (reaction.emoji.name == '✔'){
                         menu.edit('<:Snap:661557175130521610>')
-                        message.channel.fetchMessages().then(messages => {
-                            const msgjson = mapToObj(messages);
-                            fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', JSON.stringify(msgjson))
-                            const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
-                            message.author.send('Tous les messages du modmail \`' + message.channel.name + '\`: (données brutes)', attachment)
-                                .then(message.channel.delete())
-                        
-                            // if (!lastMessage.author.bot) {
-                            
-                            // }
-                        })
+                        .then(m => wait(2000)
+                        .then(a => message.channel.delete()))
                     } else {
                         message.delete()
                         menu.delete()
