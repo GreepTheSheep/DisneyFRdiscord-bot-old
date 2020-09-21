@@ -3,10 +3,10 @@ const Discord = require('discord.js')
 function modmailReport(message, client, prefix, config, f, reaction, menu, server){
     server.createChannel('report-' + message.author.username, {type: "text"}).then(async channel=>{
         channel.overwritePermissions(server.roles.find(r => r.name == '@everyone'), {READ_MESSAGES: false})
-        channel.owerritePermissions(message.author.id, {READ_MESSAGES: true})
-        channel.owerritePermissions('600643775978799115', {READ_MESSAGES: true})
+        channel.overwritePermissions(message.author.id, {READ_MESSAGES: true})
+        channel.overwritePermissions('600643775978799115', {READ_MESSAGES: true})
 
-        channel.owerritePermissions('330030648456642562', {READ_MESSAGES: true}) // Accees a Greep
+        channel.overwritePermissions('330030648456642562', {READ_MESSAGES: true}) // Accees a Greep
 
         let category = server.channels.find(c => c.id == '757559028661354536' && c.type == "category");
 
