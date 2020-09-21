@@ -5,7 +5,7 @@ const { Attachment } = require('discord.js');
 async function modmail_close(message, client, prefix, config, f){
     try{
         if(message.content == prefix + "mmclose"){
-            if (message.channel.setParent == message.guild.channels.find(c => c.name.toLowerCase() == 'modmail' && c.type == 'category')){
+            if (message.channel.parentID == message.guild.channels.find(c => c.name.toLowerCase() == 'modmail' && c.type == 'category').id){
                 let embed = new Discord.RichEmbed
                 embed.setColor('#5063E8')
                 .setTitle('Etes vous sûr de fermer le salon ?')
