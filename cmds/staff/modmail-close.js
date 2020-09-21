@@ -25,7 +25,7 @@ async function modmail_close(message, client, prefix, config, f){
                         menu.edit('<:Snap:661557175130521610>')
                         message.channel.fetchMessages().then(messages => {
                             fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', messages)
-                            const attachment = Attachment('./data/modmail/' + message.channel.name + '.txt')
+                            const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
                             message.author.send('Tous les messages du modmail \`' + message.channel.name + '\`: (données brutes)', attachment)
                                 .then(message.channel.delete())
                         
