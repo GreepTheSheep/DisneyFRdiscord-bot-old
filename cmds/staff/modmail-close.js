@@ -24,6 +24,7 @@ async function modmail_close(message, client, prefix, config, f){
                     if (reaction.emoji.name == '✔'){
                         menu.edit('<:Snap:661557175130521610>')
                         message.channel.fetchMessages().then(messages => {
+                            console.log(messages)
                             fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', JSON.stringify(messages))
                             const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
                             message.author.send('Tous les messages du modmail \`' + message.channel.name + '\`: (données brutes)', attachment)
@@ -34,6 +35,7 @@ async function modmail_close(message, client, prefix, config, f){
                             // }
                         })
                     } else {
+                        message.delete()
                         menu.delete()
                     }		
                 })
