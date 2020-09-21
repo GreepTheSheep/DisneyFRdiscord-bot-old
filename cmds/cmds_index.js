@@ -54,7 +54,7 @@ function cmds_index(message, client, prefix, cool, config, f){
        const staffMenu = require('./staff/staff-menu.js')
        staffMenu(message, client, prefix, config, f)
 
-       const modmail_close = require('./staff/staff-menu.js')
+       const modmail_close = require('./staff/modmail-close')
        modmail_close(message, client, prefix, config, f)
     }
 
