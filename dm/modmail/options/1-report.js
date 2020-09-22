@@ -14,11 +14,11 @@ function modmailReport(message, client, prefix, config, f, reaction, menu, serve
         channel.setParent(category.id);
 
         channel.send('<:Dipper:673927256778997760> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi la raison de signaler quelqu\'un__, apportez ici vos raisons et preuves, le <@&600643775978799115> vous répondra !\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
-        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', '', 'utf-8')
+        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', f.enteteDeTicket(message.author.tag, 'Signaler une personne'), 'utf-8')
 
         let embed = new Discord.RichEmbed
         embed.setColor('#12E74D')
-        .setTitle('✔ Modmail crée!')
+        .setTitle('✅ Modmail crée!')
         .setDescription('Veuillez vous rendre sur <#' + channel.id + '>')
         menu.edit(embed)
     })
