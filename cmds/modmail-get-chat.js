@@ -8,7 +8,13 @@ function modmailGetChat(message, client, prefix, config, f){
         var attachurl
         if (message.attachments.size > 0) attachurl = message.attachments.array()[0].url
         else attachurl = ''
-        fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', `${message.author.tag} : ${message.content} ${attachurl}`)
+
+        if (fs.existsSync('./data/modmail/' + message.channel.name + '.txt')) {
+            fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', fs.readFileSync('./data/modmail/' + message.channel.name + '.txt') + `${message.author.tag} : ${message.content} ${attachurl}\n`)
+        } else {
+            fs.writeFileSync('./data/modmail/' + message.channel.name + '.txt', `${message.author.tag} : ${message.content} ${attachurl}\n`)
+        }
+        
     }
 }
 
