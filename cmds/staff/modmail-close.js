@@ -11,7 +11,7 @@ async function modmail_close(message, client, prefix, config, f){
                 embed.setColor('#5063E8')
                 .setTitle('Etes vous sûr de fermer le salon ?')
                 const menu = await message.channel.send(embed)
-                await menu.react('✔')
+                await menu.react('✅')
                 await menu.react('❌')
 
                 const filter = (reaction, user) => {
@@ -22,7 +22,7 @@ async function modmail_close(message, client, prefix, config, f){
                 .then(collected => {
                     const reaction = collected.first();
                     
-                    if (reaction.emoji.name == '✔'){
+                    if (reaction.emoji.name == '✅'){
                         menu.delete()
                         const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
                         message.channel.send('<:Snap:661557175130521610>')
