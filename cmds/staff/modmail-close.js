@@ -23,9 +23,9 @@ async function modmail_close(message, client, prefix, config, f){
                     const reaction = collected.first();
                     
                     if (reaction.emoji.name == '✔'){
-                        embed.delete()
+                        menu.delete()
                         const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
-                        menu.edit('<:Snap:661557175130521610>', embed)
+                        message.channel.send('<:Snap:661557175130521610>')
                         .then(a=>wait(2000)
                         .then(b=>message.author.send('Chat du modmail de \`' + message.channel.name + '\`', attachment)
                         .then(c=>message.channel.delete())))
