@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 
 function cmds_index(message, client, prefix, cool, config, f){
 
+    if (!message.content.startsWith(prefix)) return
+
     // -- Gifs
     const angry = require('./gifs/angry.js')
     angry(message, client, prefix, cool, f)
@@ -46,9 +48,6 @@ function cmds_index(message, client, prefix, cool, config, f){
 
     const modmailInfo = require('./infos/modmail.js')
     modmailInfo(message, client,prefix, config, f)
-
-    const modmailGetChat = require('./modmail-get-chat.js')
-    modmailGetChat(message, client,prefix, config, f)
 
     // -- Staff
     if(config.staff.includes(message.author.id)) {

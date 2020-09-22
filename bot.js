@@ -20,7 +20,8 @@ client.on("message",message => {
       direct(message, client,prefix, config, f)
     } else {
       
-      if (!message.content.startsWith(prefix)) return
+      const modmailGetChat = require('./cmds/modmail-get-chat.js')
+      modmailGetChat(message, client, prefix, config, f)
 
       const cmds_index = require('./cmds/cmds_index.js')
       cmds_index(message, client, prefix, cool, config, f)
