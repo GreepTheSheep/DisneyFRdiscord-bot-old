@@ -14,7 +14,7 @@ function modmailCandidate(message, client, prefix, config, f, reaction, menu, se
         channel.setParent(category.id);
 
         channel.send('<:Dipper:673927256778997760> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi la raison de poser une candidature__, le <@&600643775978799115> le consultera !\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
-        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', '')
+        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', '', 'utf-8')
 
         let embed = new Discord.RichEmbed
         embed.setColor('#12E74D')
