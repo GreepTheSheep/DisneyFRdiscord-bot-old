@@ -40,8 +40,15 @@ function cmds_index(message, client, prefix, cool, config, f){
     const about = require('./infos/about.js')
     about(message, client, prefix, config, f)
 
+    
+
+    // -- Modmail
+
     const modmailInfo = require('./infos/modmail.js')
     modmailInfo(message, client,prefix, config, f)
+
+    const modmailGetChat = require('./modmail-get-chat.js')
+    modmailGetChat(message, client,prefix, config, f)
 
     // -- Staff
     if(config.staff.includes(message.author.id)) {
