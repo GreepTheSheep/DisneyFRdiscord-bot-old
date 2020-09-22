@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const fs = require('fs')
 
 function modmailOther(message, client, prefix, config, f, reaction, menu, server){
     server.createChannel('autre-' + message.author.username, {type: "text"}).then(async channel=>{
@@ -14,6 +15,7 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
         channel.setParent(category.id);
 
         channel.send('<:Dipper:673927256778997760> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi une autre raison__, le staff vous répondra ! (le temps de réponse peut varier selon la disponibilité du staff)\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
+        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', '')
 
         let embed = new Discord.RichEmbed
         embed.setColor('#12E74D')

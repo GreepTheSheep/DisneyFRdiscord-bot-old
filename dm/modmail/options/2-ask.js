@@ -14,6 +14,7 @@ function modmailAsk(message, client, prefix, config, f, reaction, menu, server){
         channel.setParent(category.id);
 
         channel.send('<:Dipper:673927256778997760> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi la raison de poser une (ou plusieurs) question(s)__, posez-les ! le staff vous répondra ! (le temps de réponse peut varier selon la disponibilité du staff)\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
+        fs.writeFileSync('./data/modmail/' + channel.name + '.txt', '')
 
         let embed = new Discord.RichEmbed
         embed.setColor('#12E74D')
