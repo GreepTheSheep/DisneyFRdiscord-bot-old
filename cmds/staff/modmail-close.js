@@ -19,16 +19,16 @@ async function modmail_close(message, client, prefix, config, f){
                 };
 
                 menu.awaitReactions(filter, { max: 1, time: 120000, errors: ['time'] })
-                .then(async collected => {
+                .then(collected => {
                     const reaction = collected.first();
                     
                     if (reaction.emoji.name == '✔'){
                         embed.delete()
-                        await menu.edit('<:Snap:661557175130521610>', embed)
-                        await wait(2000)
                         const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
-                        await message.author.send('Chat du modmail de \`' + message.channel.name + '\`', attachment)
-                        message.channel.delete()
+                        menu.edit('<:Snap:661557175130521610>', embed)
+                        .then(a=>wait(2000)
+                        .then(b=>message.author.send('Chat du modmail de \`' + message.channel.name + '\`', attachment)
+                        .then(c=>message.channel.delete())))
                     } else {
                         message.delete()
                         menu.delete()
