@@ -7,7 +7,7 @@ async function newTicket(message, client,prefix, config, f){
     embed.setColor('#5063E8')
     .setAuthor('Veuillez patienter...', 'https://ssl.gstatic.com/s2/oz/images/notifications/spinner_64_3f4fa14117c586c002a98cd7c5fbb2d3.gif')
     .setTitle('Création du menu en cours')
-    const menu = await message.author.send('Actuellement en phase de test', embed)
+    const menu = await message.author.send(embed)
 
     const emojis = [
         '1️⃣', // Signalement
