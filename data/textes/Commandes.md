@@ -10,5 +10,6 @@
 • `/angry` - S'énerver
 
 **__ℹ Infos :__**
+• `/modmail` - Accéder aux informations du modmail du serveur
 • `/patchnote` - Notes de mise à jour
 • `/bot` - Tout ce qu'il y a à savoir sur le bot
