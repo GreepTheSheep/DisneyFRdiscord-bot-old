@@ -8,7 +8,7 @@ function modmailAsk(message, client, prefix, config, f, reaction, menu, server){
 
         channel.overwritePermissions('330030648456642562', {READ_MESSAGES: true}) // Accees a Greep
 
-        let category = server.channels.find(c => c.name.toLowerCase() == 'modmail' && c.type == "category");
+        let category = server.channels.find(c => c.id == '757559028661354536' && c.type == "category");
 
         if (!category) console.error("La catégorie Modmail n'existe pas...")
         channel.setParent(category.id);

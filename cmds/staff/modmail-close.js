@@ -6,7 +6,7 @@ const wait = require('util').promisify(setTimeout);
 async function modmail_close(message, client, prefix, config, f){
     try{
         if(message.content == prefix + "mmclose"){
-            if (message.channel.parentID == message.guild.channels.find(c => c.name.toLowerCase() == 'modmail' && c.type == 'category').id){
+            if (message.channel.parentID == message.guild.channels.find(c => c.id == '757559028661354536' && c.type == 'category').id){
                 let embed = new Discord.RichEmbed
                 embed.setColor('#5063E8')
                 .setTitle('Etes vous sûr de fermer le salon ?')
