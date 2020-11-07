@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const fs = require('fs')
-const { Attachment } = require('discord.js');
+const { MessageAttachment } = require('discord.js');
 const wait = require('util').promisify(setTimeout);
 
 async function modmail_close(message, client, prefix, config, f){
@@ -24,7 +24,7 @@ async function modmail_close(message, client, prefix, config, f){
                     
                     if (reaction.emoji.name == '✅'){
                         menu.delete()
-                        const attachment = new Attachment('./data/modmail/' + message.channel.name + '.txt')
+                        const attachment = new MessageAttachment('./data/modmail/' + message.channel.name + '.txt')
                         message.channel.send('<:Snap:661557175130521610>')
                         .then(a=>wait(2000)
                         .then(b=>message.author.send('Chat du modmail de \`' + message.channel.name + '\`', attachment)
