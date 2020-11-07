@@ -3,23 +3,24 @@ const fs = require('fs')
 
 function modmailReport(message, client, prefix, config, f, reaction, menu, server){
     server.channels.create('report-' + message.author.username, {type: "text"}).then(async channel=>{
-        channel.overwritePermissions({
+        channel.overwritePermissions([
+            {
             id: server.roles.cache.find(r => r.name == '@everyone').id,
             deny: ['VIEW_CHANNEL']
-        })
-        channel.overwritePermissions({
-            id: message.author.id,
-            allow: ['VIEW_CHANNEL']
-         })
-        channel.overwritePermissions({
-            id: '600643775978799115',
-            allow: ['VIEW_CHANNEL']
-        })
-
-        channel.overwritePermissions({
-            id: '330030648456642562',
-            allow: ['VIEW_CHANNEL']
-        }) // Accees a Greep
+            },
+            {
+                id: message.author.id,
+                allow: ['VIEW_CHANNEL']
+            },
+            {
+                id: '600643775978799115',
+                allow: ['VIEW_CHANNEL']
+            },
+            {
+                id: '330030648456642562', // Accees a Greep
+                allow: ['VIEW_CHANNEL']
+            }
+        ])
 
         let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
 
