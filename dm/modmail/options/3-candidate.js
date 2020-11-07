@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 function modmailCandidate(message, client, prefix, config, f, reaction, menu, server){
-    server.createChannel('candidature-' + message.author.username, {type: "text"}).then(async channel=>{
+    server.channels.create('candidature-' + message.author.username, {type: "text"}).then(async channel=>{
         channel.overwritePermissions(server.roles.find(r => r.name == '@everyone'), {READ_MESSAGES: false})
         channel.overwritePermissions(message.author.id, {READ_MESSAGES: true})
         channel.overwritePermissions('600643775978799115', {READ_MESSAGES: true})

@@ -16,7 +16,7 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
         .setTitle('Ouverture du ticket...')
         menu.edit(embed)
 
-        server.createChannel('autre-' + message.author.username, {type: "text"}).then(async channel=>{
+        server.channels.create('autre-' + message.author.username, {type: "text"}).then(async channel=>{
             channel.overwritePermissions(server.roles.find(r => r.name == '@everyone'), {READ_MESSAGES: false})
             channel.overwritePermissions(message.author.id, {READ_MESSAGES: true})
             channel.overwritePermissions('600643775978799115', {READ_MESSAGES: true})
