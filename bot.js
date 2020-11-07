@@ -9,7 +9,7 @@ let staff = config.staff
 
 client.on("ready" , () => {
     client.user.setActivity('/aide') 
-    console.log(`${client.user.tag} est prêt sur ${client.guilds.size} serveurs ! \n-------------------------------------------`)
+    console.log(`${client.user.tag} est prêt sur ${client.guilds.cache.size} serveurs ! \n-------------------------------------------`)
 })
 
 client.on("message",message => {
