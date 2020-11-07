@@ -1,12 +1,25 @@
 const Discord = require('discord.js')
+const fs = require('fs')
 
 function modmailCandidate(message, client, prefix, config, f, reaction, menu, server){
     server.channels.create('candidature-' + message.author.username, {type: "text"}).then(async channel=>{
-        channel.overwritePermissions(server.roles.cache.find(r => r.name == '@everyone'), {READ_MESSAGES: false})
-        channel.overwritePermissions(message.author.id, {READ_MESSAGES: true})
-        channel.overwritePermissions('600643775978799115', {READ_MESSAGES: true})
+        channel.overwritePermissions({
+            id: server.roles.cache.find(r => r.name == '@everyone').id,
+            deny: ['VIEW_CHANNEL']
+        })
+        channel.overwritePermissions({
+            id: message.author.id,
+            allow: ['VIEW_CHANNEL']
+         })
+        channel.overwritePermissions({
+            id: '600643775978799115',
+            allow: ['VIEW_CHANNEL']
+        })
 
-        channel.overwritePermissions('330030648456642562', {READ_MESSAGES: true}) // Accees a Greep
+        channel.overwritePermissions({
+            id: '330030648456642562',
+            allow: ['VIEW_CHANNEL']
+        }) // Accees a Greep
 
         let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
 
