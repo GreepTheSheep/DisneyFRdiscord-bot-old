@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.6.4",
+    "discord.js": "^12.4.1",
     "fs": "0.0.1-security",
-    "shelljs": "0.8.4",
-    "os": "0.1.1"
+    "os": "0.1.1",
+    "shelljs": "0.8.4"
   }
 }
