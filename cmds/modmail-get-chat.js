@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const fs = require('fs')
 
 function modmailGetChat(message, client, prefix, config, f){
-    if (message.channel.parentID == message.guild.channels.cache.find(c => c.id == '757559028661354536' && c.type == 'category').id){
+    if (message.channel.parentID == '757559028661354536'){
         fs.readFile('./data/modmail/' + message.channel.name + '.txt', (err, data) => {
             if (err) console.error(err)
             
