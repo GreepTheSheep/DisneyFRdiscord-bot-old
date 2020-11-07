@@ -7,7 +7,7 @@ async function modmail_close(message, client, prefix, config, f){
     try{
         if(message.content == prefix + "mmclose"){
             if (message.channel.parentID == message.guild.channels.find(c => c.id == '757559028661354536' && c.type == 'category').id){
-                let embed = new Discord.RichEmbed
+                let embed = new Discord.MessageEmbed
                 embed.setColor('#5063E8')
                 .setTitle('Etes vous sûr de fermer le salon ?')
                 const menu = await message.channel.send(embed)

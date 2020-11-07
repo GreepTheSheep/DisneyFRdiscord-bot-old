@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 
 async function newTicket(message, client,prefix, config, f){
-    let embed = new Discord.RichEmbed
-    let embed2 = new Discord.RichEmbed
+    let embed = new Discord.MessageEmbed
+    let embed2 = new Discord.MessageEmbed
 
     embed.setColor('#5063E8')
     .setAuthor('Veuillez patienter...', 'https://ssl.gstatic.com/s2/oz/images/notifications/spinner_64_3f4fa14117c586c002a98cd7c5fbb2d3.gif')
@@ -41,7 +41,7 @@ async function newTicket(message, client,prefix, config, f){
             .setDescription('Bye! 👋')
             menu.edit(embed2).then(m=>menu.delete(5000))
         } else {
-            const server = client.guilds.get('600355162279641108')
+            const server = client.guilds.cache.get('600355162279641108')
             embed.setColor('#A91CE4')
             .setTitle('Ouverture du ticket...')
             menu.edit(embed)

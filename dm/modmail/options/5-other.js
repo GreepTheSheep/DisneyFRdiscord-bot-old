@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 const fs = require('fs')
 
 function modmailOther(message, client, prefix, config, f, reaction, menu, server){
-    let embed = new Discord.RichEmbed
-    let embed2 = new Discord.RichEmbed
+    let embed = new Discord.MessageEmbed
+    let embed2 = new Discord.MessageEmbed
     embed.setColor('#D78300')
     .setTitle('Donnez votre raison')
     .setDescription('Faites un court texte pour expliquer l\'ouverture de ce ticket')
@@ -23,7 +23,7 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
     
             channel.overwritePermissions('330030648456642562', {READ_MESSAGES: true}) // Accees a Greep
     
-            let category = server.channels.find(c => c.id == '757559028661354536' && c.type == "category");
+            let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
     
             if (!category) console.error("La catégorie Modmail n'existe pas...")
             channel.setParent(category.id);

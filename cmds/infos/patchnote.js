@@ -6,9 +6,9 @@ const fs = require('fs')
 
 function patchnote(message, client, prefix, config, f){
     if(message.content.startsWith(prefix + "patchnote")){
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.MessageEmbed()
         embed.setColor('RANDOM')
-        .setAuthor(`Notes de mise à jour de ${client.user.username}:`,client.user.displayAvatarURL)
+        .setAuthor(`Notes de mise à jour de ${client.user.username}:`,client.user.displayAvatarURL())
         .setDescription(fs.readFileSync('./data/textes/Patch-Notes.md', 'utf-8'))
         .setFooter("Version actuelle: " + JSON.parse(fs.readFileSync('./package.json', 'utf-8')).version)
         if (message.channel.id == '600466257615126559' || message.channel.id == '747049063764983849'){

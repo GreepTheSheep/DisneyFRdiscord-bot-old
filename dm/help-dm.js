@@ -5,7 +5,7 @@ const fs = require('fs')
 
 function helpDM(message, client,prefix, config, f){
     if (message.content.startsWith('help') || message.content.startsWith(prefix + 'help') || message.content.startsWith('aide') || message.content.startsWith(prefix + 'aide') || message.content.startsWith('aled') || message.content.startsWith(prefix + 'aled')) {
-        let embed = new Discord.RichEmbed
+        let embed = new Discord.MessageEmbed
         embed.setColor('RANDOM')
         .setTitle(`Commandes de ${client.user.username} en message privé:`)
         .setDescription(fs.readFileSync('./data/textes/Commandes-MP.md', 'utf-8'))

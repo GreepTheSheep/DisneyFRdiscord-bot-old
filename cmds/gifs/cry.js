@@ -7,7 +7,7 @@ function cry(message, client, prefix, cool, f){
         if(cool.has(message.author.id)) return f.erreur("Vous devez attendre 5 secondes entre chaque commande !",message.channel.id)
         let alea = f.random(0,cryList.length - 1)
         let mention = message.mentions.users.first() || client.user
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.MessageEmbed()
         .setColor("2E2EFE")
         .setDescription(":sob:  **" + message.author.username + "** pleure à cause de **" + mention.username + "** !")
         .setImage(cryList[alea])

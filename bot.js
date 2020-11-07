@@ -36,14 +36,14 @@ client.on("guildMemberAdd",member => {
   const total = member.guild.members.array().length;
       const bots = member.guild.members.filter(m => m.user.bot).size; 
       const members = total - bots
-  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
+  client.channels.cache.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
 })
 
 client.on("guildMemberRemove",member => {
   const total = member.guild.members.array().length;
       const bots = member.guild.members.filter(m => m.user.bot).size; 
       const members = total - bots
-  client.channels.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
+  client.channels.cache.get("620292700260007970").setName("💫┃𝗗isney-𝗙𝗥-➳" + members)
 })
 */
 

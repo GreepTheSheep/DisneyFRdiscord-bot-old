@@ -23,7 +23,7 @@ function random(min, max){
     return Math.round(Math.random() * (max - min) + min)
 }
 function erreur(message,channel){
-    let embed = new Discord.RichEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor("FE2E2E")
     .setAuthor("Erreur :",client.user.displayAvatarURL)
     .setDescription(message)
