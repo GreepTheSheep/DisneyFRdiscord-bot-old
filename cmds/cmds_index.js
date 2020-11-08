@@ -23,6 +23,9 @@ function cmds_index(message, client, prefix, cool, config, f){
     const kiss = require('./gifs/kiss.js')
     kiss(message, client, prefix, cool, f)
 
+    const lie = require('./gifs/lie.js')
+    lie(message, client, prefix, cool, f)
+
     const please = require('./gifs/please.js')
     please(message, client, prefix, cool, f)
 
