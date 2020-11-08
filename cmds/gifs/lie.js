@@ -9,7 +9,7 @@ function lie(message, client, prefix, cool, f){
         let mention = message.mentions.users.first() || client.user
         let embed = new Discord.MessageEmbed()
         .setColor("2E2EFE")
-        .setDescription(":pray: **Arrête de mentir** !")
+        .setDescription(":lying_face: **Arrête de mentir** !")
         .setImage(lieList[alea])
         message.channel.send(embed)
         cool.add(message.author.id)
