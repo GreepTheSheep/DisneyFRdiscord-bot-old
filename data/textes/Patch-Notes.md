@@ -1,1 +1,2 @@
-- Ouverture du `/modmail` 🔥
+- Mise à jour du bot -> Discord.js version 12 🔥
+- Ajout de la commande GIF `/lie`
