@@ -5,12 +5,8 @@ function modmailAsk(message, client, prefix, config, f, reaction, menu, server){
     server.channels.create('ask-' + message.author.username, {type: "text"}).then(async channel=>{
         channel.overwritePermissions([
             {
-            id: server.roles.cache.find(r => r.name == '@everyone').id,
-            deny: ['VIEW_CHANNEL']
-            },
-            {
-                id: message.author.id,
-                allow: ['VIEW_CHANNEL']
+                id: server.roles.cache.find(r => r.name == '@everyone').id,
+                deny: ['VIEW_CHANNEL']
             },
             {
                 id: '600643775978799115',
@@ -18,6 +14,13 @@ function modmailAsk(message, client, prefix, config, f, reaction, menu, server){
             },
             {
                 id: '330030648456642562', // Accees a Greep
+                allow: ['VIEW_CHANNEL']
+            }
+        ])
+
+        channel.overwritePermissions([
+            {
+                id: message.author.id,
                 allow: ['VIEW_CHANNEL']
             }
         ])
