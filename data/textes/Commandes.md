@@ -3,6 +3,7 @@
 • `/kiss` - Faire un bisou
 • `/dance` - Faire une danse
 • `/please` - Prier fort
+• `/lie` - Arrêter de mentir
 • `/smile` - Faire un grand sourir
 • `/hey` - Faire coucou
 • `/smug` - Bouder
