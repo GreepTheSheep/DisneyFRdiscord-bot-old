@@ -17,6 +17,10 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
         menu.edit(embed)
 
         server.channels.create('autre-' + message.author.username, {type: "text"}).then(async channel=>{
+            channel.updateOverwrite(server.roles.cache.find(r => r.name == '@everyone'), {
+                VIEW_CHANNEL: false
+            })
+            
             channel.overwritePermissions([
                 {
                     id: server.roles.cache.find(r => r.name == '@everyone').id,
@@ -28,16 +32,20 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
                 },
                 {
                     id: '330030648456642562', // Accees a Greep
-                    allow: ['VIEW_CHANNEL']
+                    allow: ['VIEW_CHANNEL', 'MANAGE_CHANNELS']
                 }
             ])
     
-            channel.overwritePermissions([
-                {
-                    id: message.author.id,
-                    allow: ['VIEW_CHANNEL']
-                }
-            ])
+            channel.updateOverwrite(message.author, {
+                VIEW_CHANNEL: true
+              })
+    
+            // channel.overwritePermissions([
+            //     {
+            //         id: message.author.id,
+            //         allow: ['VIEW_CHANNEL']
+            //     }
+            // ])
     
             let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
     

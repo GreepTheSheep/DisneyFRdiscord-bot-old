@@ -3,6 +3,10 @@ const fs = require('fs')
 
 function modmailCandidate(message, client, prefix, config, f, reaction, menu, server){
     server.channels.create('candidature-' + message.author.username, {type: "text"}).then(async channel=>{
+        channel.updateOverwrite(server.roles.cache.find(r => r.name == '@everyone'), {
+            VIEW_CHANNEL: false
+        })
+        
         channel.overwritePermissions([
             {
                 id: server.roles.cache.find(r => r.name == '@everyone').id,
@@ -14,16 +18,20 @@ function modmailCandidate(message, client, prefix, config, f, reaction, menu, se
             },
             {
                 id: '330030648456642562', // Accees a Greep
-                allow: ['VIEW_CHANNEL']
+                allow: ['VIEW_CHANNEL', 'MANAGE_CHANNELS']
             }
         ])
 
-        channel.overwritePermissions([
-            {
-                id: message.author.id,
-                allow: ['VIEW_CHANNEL']
-            }
-        ])
+        channel.updateOverwrite(message.author, {
+            VIEW_CHANNEL: true
+          })
+
+        // channel.overwritePermissions([
+        //     {
+        //         id: message.author.id,
+        //         allow: ['VIEW_CHANNEL']
+        //     }
+        // ])
 
         let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
 
