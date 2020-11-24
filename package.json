@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.0",
     "fs": "0.0.1-security",
     "os": "0.1.1",
     "shelljs": "0.8.4"
