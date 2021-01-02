@@ -22,7 +22,7 @@ client.on("message",message => {
 
       if (message.channel.id == '616055657346629635'){
         const checkCounter = require('./events/comptons.js')
-        checkCounter(message, client)
+        checkCounter(message)
       }
       
       const modmailGetChat = require('./cmds/modmail-get-chat.js')

@@ -1,7 +1,6 @@
 const Discord = require('discord.js')
-function checkCounter(message, client){
-    const channel = client.channels.cache.get("616055657346629635");
-    channel.messages.fetch({ limit: 2 }).then(messagesC => {
+function checkCounter(message){
+    message.channel.messages.fetch({ limit: 2 }).then(messagesC => {
         var messages = messagesC.array()
         var oldMessage = messages[1]
         var oldNumber = Number(oldMessage.content)
