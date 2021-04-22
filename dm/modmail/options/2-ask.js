@@ -6,32 +6,19 @@ function modmailAsk(message, client, prefix, config, f, reaction, menu, server){
         channel.updateOverwrite(server.roles.cache.find(r => r.name == '@everyone'), {
             VIEW_CHANNEL: false
         })
-        
-        channel.overwritePermissions([
-            {
-                id: server.roles.cache.find(r => r.name == '@everyone').id,
-                deny: ['VIEW_CHANNEL']
-            },
-            {
-                id: '600643775978799115',
-                allow: ['VIEW_CHANNEL']
-            },
-            {
-                id: '330030648456642562', // Accees a Greep
-                allow: ['VIEW_CHANNEL', 'MANAGE_CHANNELS']
-            }
-        ])
 
-        channel.updateOverwrite(message.author, {
+        channel.updateOverwrite('600643775978799115', {
             VIEW_CHANNEL: true
-          })
+        })
 
-        // channel.overwritePermissions([
-        //     {
-        //         id: message.author.id,
-        //         allow: ['VIEW_CHANNEL']
-        //     }
-        // ])
+        channel.updateOverwrite('330030648456642562', {
+            VIEW_CHANNEL: true,
+            MANAGE_CHANNELS: true
+        })
+
+        channel.updateOverwrite(message.author.id, {
+            VIEW_CHANNEL: true
+        })
 
         let category = server.channels.cache.find(c => c.id == '757559028661354536' && c.type == "category");
 
