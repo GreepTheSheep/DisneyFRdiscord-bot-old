@@ -52,7 +52,7 @@ function modmailOther(message, client, prefix, config, f, reaction, menu, server
             if (!category) console.error("La catégorie Modmail n'existe pas...")
             channel.setParent(category.id);
     
-            channel.send('<:Dipper:673927256778997760> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi la raison suivante : "' + m.content + '"__, le staff vous répondra ! (le temps de réponse peut varier selon la disponibilité du staff)\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
+            channel.send('<:Dipper:832564058447544361> Bienvenue dans le modmail <@' + message.author.id + '>!\n- __Vous avez choisi la raison suivante : "' + m.content + '"__, le staff vous répondra ! (le temps de réponse peut varier selon la disponibilité du staff)\n\n\`\`\`Staff: utilisez la commande ' + prefix + 'mmclose pour fermer le ticket\`\`\`')
             fs.writeFileSync('./data/modmail/' + channel.name + '.txt', f.enteteDeTicket(message.author.tag, m.content), 'utf-8')
     
             embed2.setColor('#12E74D')
