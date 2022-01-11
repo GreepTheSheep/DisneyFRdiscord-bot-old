@@ -1,14 +1,12 @@
 const Discord = require('discord.js')
 
-const fs = require('fs')
-
-function help(message, client, prefix){
+function pub(message, client, prefix){
 
     if (message.content.startsWith(prefix + "pub")){
 
         let embed = new Discord.MessageEmbed()
 
-        embed.setColor("2E2EFE")
+        embed.setColor("#2E2EFE")
 
         .setAuthor("Voici la publicité du serveur pour " + message.author.username + " :",client.user.displayAvatarURL())
 
@@ -22,4 +20,4 @@ function help(message, client, prefix){
 
 }
 
-module.exports = help
+module.exports = pub
