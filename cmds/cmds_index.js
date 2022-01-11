@@ -38,6 +38,9 @@ function cmds_index(message, client, prefix, cool, config, f){
     // -- Infos
     const help = require('./infos/help.js')
     help(message, client, prefix)
+
+    const pub = require('./infos/pub.js')
+    pub(message, client, prefix)
     
     const patchnote = require('./infos/patchnote.js')
     patchnote(message, client, prefix, config, f)
