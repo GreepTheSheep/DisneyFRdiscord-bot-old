@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 
+const fs = require('fs');
+
 function pub(message, client, prefix){
 
     if (message.content.startsWith(prefix + "pub")){
