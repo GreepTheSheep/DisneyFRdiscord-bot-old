@@ -12,6 +12,6 @@
     "discord.js": "^12.5.3",
     "fs": "0.0.1-security",
     "os": "0.1.1",
-    "shelljs": "0.8.4"
+    "shelljs": "0.8.5"
   }
 }
